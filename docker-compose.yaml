@@ -61,6 +61,9 @@ services:
       - roboshop
     depends_on:
       - mysql
+    environment:
+      - JAVA_OPTS=-Xmx256m -Xms128m
+    command: ["java", "-Xmx256m", "-Xms128m", "-jar", "shipping.jar"]
 
   rabbitmq:
     image: rabbitmq:3.11-management
