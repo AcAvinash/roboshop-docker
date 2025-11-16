@@ -8,13 +8,13 @@ networks:
 
 services:
   mongodb:
-    image: mongodb:v1
+    image: acavinash/mongodb:v1
     container_name: mongodb
     networks:
       - roboshop
 
   catalogue:
-    image: catalogue:v1
+    image: acavinash/catalogue:v1
     container_name: catalogue
     networks:
       - roboshop
@@ -28,7 +28,7 @@ services:
       - roboshop
 
   user:
-    image: user:v1
+    image: acavinash/user:v1
     container_name: user
     networks:
       - roboshop
@@ -37,7 +37,7 @@ services:
       - redis
 
   cart:
-    image: cart:v1
+    image: acavinash/cart:v1
     container_name: cart
     networks:
       - roboshop
@@ -47,7 +47,7 @@ services:
 
 
   mysql:
-    image: mysql:v1
+    image: acavinash/mysql:v2
     container_name: mysql
     networks:
       - roboshop
@@ -55,7 +55,7 @@ services:
       - mysql:/var/lib/mysql
 
   shipping:
-    image: shipping:v1
+    image: acavinash/shipping:v1
     container_name: shipping
     networks:
       - roboshop
@@ -77,7 +77,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=roboshop123
 
   payment:
-    image: payment:v1
+    image: acavinash/payment:v1
     container_name: payment
     networks:
       - roboshop
